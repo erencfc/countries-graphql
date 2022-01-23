@@ -8,7 +8,7 @@ type Country {
     name: String!
     native: String!
     phone: String!
-    # continent: Continent!
+    continent: Continent!
     capital: String
     currency: String
     # languages: [Language!]!
