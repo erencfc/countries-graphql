@@ -11,8 +11,7 @@ type Country {
     continent: Continent!
     capital: String
     currency: String
-    # languages: [Language!]!
+    languages: [Language!]
     emoji: String!
     emojiU: String!
-    # states: [State!]!
 }
