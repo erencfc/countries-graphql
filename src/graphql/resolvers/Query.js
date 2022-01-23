@@ -1,14 +1,24 @@
 export const Query = {
     // Country
-    countries: (_, { filter }, { continents, countries, languages }) =>
+    countries: (_, __, { countries }) =>
         Object.entries(countries).map(([code, country]) => ({
             ...country,
             code,
         })),
 
-    country: (_, args, { countries }) => {
-        const code = args.code;
-        const country = countries[code];
-        return { ...country, code };
+    country: (_, { code }, { countries }) => {
+        return { ...countries[code], code };
+    },
+
+    // Continent
+    continents: (_, __, { continents }) =>
+        Object.entries(continents).map(([code, name]) => ({
+            code,
+            name,
+        })),
+
+    continent: (_, { code }, { continents }) => {
+        const name = continents[code];
+        return { code, name };
     },
 };
