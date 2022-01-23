@@ -1,0 +1,16 @@
+type Query {
+    languages(filter: LanguageFilterInput): [Language!]!
+    language(code: ID!): Language
+}
+
+type Language {
+    code: ID!
+    name: String
+    native: String
+    rtl: Boolean!
+}
+
+# Inputs
+input LanguageFilterInput {
+    code: ID
+}

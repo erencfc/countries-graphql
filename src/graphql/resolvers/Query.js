@@ -38,4 +38,13 @@ export const Query = {
     },
     continent: (_, args, { db }) =>
         db.continents.find((continent) => continent.code == args.code),
+
+    // Language
+    languages: (_, { filter }, { db }) => {
+        if (filter === undefined) return db.languages;
+
+        return db.languages.filter((language) => language.code == filter.code);
+    },
+    language: (_, args, { db }) =>
+        db.languages.find((language) => language.code == args.code),
 };
