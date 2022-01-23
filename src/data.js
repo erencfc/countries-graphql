@@ -11821,3 +11821,7 @@ const countries = [
         states: [],
     },
 ];
+
+export default {
+    countries,
+};
