@@ -1,5 +1,5 @@
 type Query {
-    countries(filter: CountryFilterInput): [Country!]!
+    countries: [Country!]!
     country(code: ID!): Country
 }
 
@@ -15,11 +15,4 @@ type Country {
     emoji: String!
     emojiU: String!
     # states: [State!]!
-}
-
-# Inputs
-input CountryFilterInput {
-    code: ID
-    currency: String
-    #continent: String
 }

@@ -3,7 +3,7 @@ import { GraphQLServer, PubSub } from "graphql-yoga";
 import resolvers from "@graphql/resolvers";
 import typeDefs from "@graphql/type-defs";
 
-import db from "./data";
+import { continents, countries, languages } from "countries-list";
 
 const pubsub = new PubSub();
 const server = new GraphQLServer({
@@ -11,7 +11,9 @@ const server = new GraphQLServer({
     resolvers,
     context: {
         pubsub,
-        db,
+        continents,
+        countries,
+        languages,
     },
 });
 
