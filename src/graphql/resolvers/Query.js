@@ -27,4 +27,15 @@ export const Query = {
     },
     country: (_, args, { db }) =>
         db.countries.find((country) => country.code == args.code),
+
+    // Continent
+    continents: (_, { filter }, { db }) => {
+        if (filter === undefined) return db.continents;
+
+        return db.continents.filter(
+            (continent) => continent.code == filter.code
+        );
+    },
+    continent: (_, args, { db }) =>
+        db.continents.find((continent) => continent.code == args.code),
 };

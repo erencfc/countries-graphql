@@ -1,0 +1,15 @@
+type Query {
+    continents(filter: ContinentFilterInput): [Continent!]!
+    continent(code: ID!): Continent
+}
+
+type Continent {
+    code: ID!
+    name: String!
+    #countries: [Country!]!
+}
+
+# Inputs
+input ContinentFilterInput {
+    code: ID
+}
